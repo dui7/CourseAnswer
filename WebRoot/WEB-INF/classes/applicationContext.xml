@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:property-placeholder location="classpath:db.properties" />
+
+
+	<!-- 引入其他applicationContext.xml的bean >这一句要放在所有bean 配置的最前面。 注意：引用外部的bean 
+		ref用的属性是bean <ref bean=""/> 引用内部的bean ref用的属性是local <ref local=""/> -->
+	<import resource="classpath:applicationContext-adminUser.xml" />
+	<import resource="classpath:applicationContext-student.xml" />
+	<import resource="classpath:applicationContext-teacher.xml" />
+	<import resource="classpath:applicationContext-courses.xml" />
+
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName">
+			<value>${db.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${db.url}</value>
+		</property>
+		<property name="username">
+			<value>${db.username}</value>
+		</property>
+		<property name="password">
+			<value>${db.password}</value>
+		</property>
+	</bean>
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml">
+		</property>
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	<property name="mappingResources">
+		<!-- mappingResources：指定classpath下具体映射文件名 -->
+		<list>
+			<value>com/hrbhuade/pojo/AdminUser.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Auth.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Role.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Student.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Answercontent.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Evaluate.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Comment.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Teacher.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Notice.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Department.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Courses.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Teach.hbm.xml</value>
+			<value>com/hrbhuade/pojo/Teachersoffice.hbm.xml</value>
+			
+			
+		</list>
+	</property>
+	
+	</bean>
+
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 启用事务注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

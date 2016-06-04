@@ -1,0 +1,320 @@
+@charset "utf-8";
+/* CSS Document */
+body, p ,a{
+	font-family: "微软雅黑";
+} 
+.onepage {
+}
+.navbar-brand {
+	color:fff;
+}
+.nav-yinying{
+	background-image: url(../image/nav-yinying.png);
+	background-repeat: repeat-x;
+	
+}
+.text-yinying{
+	text-shadow:1px 1px 10px #333333;
+}
+.headh1content {
+	font-size: 50px;
+	margin-top:180px;
+	font-family:'微软雅黑';
+	color:#fff;
+	text-align:center;
+	line-height:150%;
+}
+.login-btn >a {
+	margin-top:8px;
+	float:right;
+	border-color:#9ac200;
+	font-family:'微软雅黑';
+}
+.btn-login-other{
+	color: #9ac200;
+	margin-right: 35px;
+}
+.btn-login-other:hover{
+	background-color: #9AC200;
+	color: #FFFFFF;
+	
+}
+.textone {
+	margin-top:50px;
+	text-align:center;
+	font-size:18px;
+	font-family:'微软雅黑';
+	color:#FFF;
+}
+.btn-app-stroe {
+	margin-top:70px;
+	text-align:center;
+}
+.index-btn {
+	border: solid 2px #9AC200;
+	background-color: #9ac200;
+	color:#FFFFFF;
+	
+	margin-right: 15px;
+}
+.index-btn:hover {
+	border: solid 2px #9AC200;
+	background:none;
+	background-color: ;
+		
+	color: #caff00;
+}
+
+#onepagebg {
+	background-image:url(../image/002.jpg);
+	background-size:100%;
+	height:650px;
+}
+.select01 >li >a {
+font-family: "微软雅黑";
+	color:#FFFFFF;
+	font-size:18px;
+	float: right;
+	margin-left:20px;
+}
+
+.select01 :hover {
+color:#46B8DA;
+text-decoration: none;
+}
+.login01 {
+	float:left;
+}
+.modal-dialog {
+	margin-top:100px;
+	width:500px;
+}
+.checkbox {
+	text-align:center;
+}
+.modal-title {
+	color:#9ac200;
+}
+.myModal {
+	margin-left:45px;
+	height:auto;
+	width:400px;
+}
+.my-group {
+	float: left;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	float:left;
+}
+.btn-group {
+	margin-top:-10px;
+}
+.form-group {
+	margin-top:20px;
+}
+.form-group >button {
+	width:335px;
+	height:40px;
+	margin-left:30px;
+}
+#radio-btn {
+
+	color:#9ac200;
+}
+#username {
+	height:40px;
+}
+#password {
+	height:40px;
+}
+.result{
+	text-align:center;
+	color:#F00;}
+
+.suo{
+	
+	background-image:url(../image/suo.png);
+	background-size:25px;
+	background-repeat: no-repeat;
+	background-position: 20px;
+}
+.mytitle{
+	text-align: center;
+	
+}
+.nav-pro {
+	font-size:20px; 
+	margin-left: 20px;
+	
+}
+.nav01{
+	float: left;
+}
+.nav01 >li>a{
+	font-size:18px; 
+	margin-left: 20px;;
+}
+.main-nav{
+	position: relative;
+}
+
+.college-btn{
+	width:100%;
+
+}
+.coll-form{
+	height: 80px;
+	padding-top:20px ;
+	
+
+} 
+.found01{
+	width: 70%;
+	display:inline ;
+	
+}
+.college-name{
+	height: 50px;
+	padding:0px 15px ;
+	
+	background-color:#F5F5F5;
+
+	
+}
+.college-name >h3 {
+	line-height:50px ;
+	color: #9AC200;
+}
+
+.room-name{
+	height: 55px;
+	padding:5px 15px ;
+	
+}
+.room-name >h4{
+	line-height:50px ;
+	color: #9AC200;
+	margin-top: -5px;
+}
+.media-object{
+	width:131px;
+	height:131px;
+}
+.media-object img{
+	width:131px;
+	height:131px;
+}
+.login_button{
+	float: right;
+}
+.body-mapping{
+	margin-top: 70px;
+}
+.menu-div {
+	margin: auto;
+	width: 1170px;
+	
+}
+.my-media-left{
+	float: left;
+	padding-right: 20px;
+	padding-top: 5px;
+}
+.mynav{
+	padding:0;margin-bottom:0;list-style:none;
+	
+}
+.mynav li{
+	padding: 0px 10px;
+	
+	
+}
+.mynav a{
+	
+}
+.teacher-list-ico{
+	width: 130px;
+	height: 100%;
+	float: left;
+}
+.teacher-name{
+	width: 70%;
+	height: 100%;
+	float: left;
+	margin-top: 10px;
+	padding-left: 15px;
+}
+
+.teacher-name h3 p{
+	float: left;
+}
+.course{
+	margin-top: 25px;
+	font-size: 16px;
+	
+}
+.course a{
+	display: block;
+	margin: 0 5px;
+	float: left;
+}
+.course span{
+	float: left;
+}
+.goodAt{
+	margin-top: 5px;
+		font-size: 16px;
+		float: left;
+		display: block;
+		width: 800px;
+}
+.xi{
+	margin-top: 6px ;
+	display: block;
+
+
+}
+.t-name{
+	float: left;
+	display: block;
+	width: 120px;
+	margin-top: 0;
+	font-size: 28px;
+	line-height: 20px;
+}
+.list-padding{
+	margin-bottom: 20px;
+	height: 100%;
+
+}
+.bottonDiv{
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	line-height: 145px;
+	
+}
+.bottonDiv a{
+	width: 120px;
+	height: 40px;
+	font-size: 16px;
+	
+}
+
+.user-name{
+	font-size: 18px;
+	margin-top:10px ;
+	color: #9AC200;
+}
+.user-img{
+	width: 40px;
+	height: 32px;
+	margin-right: 10px;
+}
+
+.img-info{
+	margin-left:10px ;
+	width:22px ;
+	height:22px ;
+}

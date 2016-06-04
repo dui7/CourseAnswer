@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx">
+
+	<bean id="coursesDao" class="com.hrbhuade.collegeManageDao.CoursesDao"> 
+ 		<property name="sf" ref="sessionFactory" />
+ 	</bean> 
+ 	<bean id="coursesService" class="com.hrbhuade.collegeManageService.CoursesService"> 
+ 		<property name="courses" ref="coursesDao" />  
+	</bean> 
+	<bean id="coursesAction" class="com.hrbhuade.collegeManageAction.CoursesAction"> 
+		<property name="coursesService" ref="coursesService" /> 
+	</bean> 
+	
+	
+	
+	
+	<bean id="departmentDao" class="com.hrbhuade.collegeManageDao.DepartmentDao"> 
+ 		<property name="sf" ref="sessionFactory" />
+ 	</bean> 
+ 	<bean id="departmentService" class="com.hrbhuade.collegeManageService.DepartmentService"> 
+ 		<property name="department" ref="departmentDao" />  
+	</bean> 
+	<bean id="departmentAction" class="com.hrbhuade.collegeManageAction.DepartmentAction"> 
+		<property name="departmentService" ref="departmentService" /> 
+	</bean>
+	
+	
+	<bean id="teachersofficeDao" class="com.hrbhuade.collegeManageDao.TeachersofficeDao"> 
+ 		<property name="sf" ref="sessionFactory" />
+ 	</bean> 
+ 	<bean id="teachersofficeService" class="com.hrbhuade.collegeManageService.TeachersofficeService"> 
+ 		<property name="teachersoffice" ref="teachersofficeDao" />  
+	</bean> 
+	<bean id="teachersofficeAction" class="com.hrbhuade.collegeManageAction.TeachersofficeAction"> 
+		<property name="teachersofficeService" ref="teachersofficeService" /> 
+	</bean>
+	
+	
+	
+</beans>

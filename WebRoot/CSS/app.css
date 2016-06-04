@@ -1,0 +1,171 @@
+@charset "utf-8";
+/* CSS Document */
+h1, h3, p, a, button {
+	font-family:"微软雅黑"
+}
+
+.side-nav{
+	position:fixed;
+	top:45%;
+	right:20px;
+	z-index:1;}
+
+.side-nav ul.nav-side-nav{
+	text-align:center;
+	list-style:none;
+	margin:0;
+	padding-left:0;
+	}
+	
+	.side-nav ul.nav-side-nav >li{
+		display:block;
+		line-height:1.45em;
+		margin:0;
+		padding:8px;0;
+		}
+	.side-nav ul.nav-side-nav >li >a{
+		display:block;
+		width:10px;
+		height:10px;
+		border-radius:50%;
+		background:#e2e2e2;
+		}		
+.onepage {
+	height:750px;
+}
+.onepage-bg {
+	height:800px;
+	width:100%;
+	position:absolute;
+	background-position:center center;
+	background-size:cover;
+}
+#onepagebg {
+	background-image:url(images/14249174416585.jpg)
+}
+.headh1content {
+	margin-top:150px;
+	line-height:75px;
+}
+.title-text {
+	margin-left:50px;
+}
+.headfontsize h1 {
+	font-size:50pt;
+	color:#ffffff
+}
+.headfontsize p {
+	color:#ffffff
+}
+.twopage {
+	padding:2px 0 0 2px;
+	height:auto;
+	position:relative;
+}
+.twopage-text {
+	width:100%;
+	text-align:center;
+}
+.twopage-text-h1 {
+	margin-left:120px;
+	letter-spacing:2px;
+	margin-top:80px;
+	margin-bottom:0;
+	padding:20px 0 0 0;
+}
+.twopage-text-h1 img {
+	width:20px;
+	margin-top:-20px;
+}
+.twopage .row {
+	margin-right:0px;
+	margin-left:0px;
+}
+.twopage courses {
+	float:left;
+	background:#FFF;
+	padding:0 2px 2px 0;
+	position:relative;
+	overflow:hidden;
+}
+.twopage courses >a {
+	width:100%;
+	height:100px;
+	float:left;
+	text-align:center;
+	position: relative;
+}
+.classicon h3 {
+	margin-top:120px;
+	color:#00F;
+	font-family:"楷体";
+}
+.classicon h1 {
+	color:#30F;
+	font-family:"楷体";
+}
+.classicon {
+	width:100%;
+	height:100px;
+	position: absolute;
+	left:0;
+	top:0;
+	color:#FFF;
+	opacity:0.5;
+}
+.twopagebtn {
+	width:100%;
+	margin:0% auto;
+	text-align:center;
+}
+.twopagebtn .btn-lg {
+	font-size:25px;
+}
+.threepage {
+	position:absolute;
+	width:100%;
+	height:800px;
+}
+.threepage-bg {
+	position:absolute;
+	height:100%;
+	width:100%;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+#threepagebg {
+	background-image:url(images/14405875176183.jpg)
+}
+#threepage-photo {
+	background-image:url(images/201.jpg);
+}
+.fourpage {
+	height:900px;
+	background-color:#000;
+	
+	margin-top:800px;
+	
+}
+.course-text {
+	color:#FFF;
+	margin-top:100px;
+	width:100%;
+	text-align:center;
+	
+}
+
+.course-text p{
+	margin-top:25px;
+	font-size:20px;}
+	
+
+#fivepage{
+	background-image:url(images/wallpaper_5252197.jpg)}
+	
+.queyeicon{
+	width:200px;}
+.queyeicon: hover{
+	border:2px solid #d9edf7;
+	
+	}

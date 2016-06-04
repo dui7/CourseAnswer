@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>课程管理</title>
+<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript">
+	var url;
+	
+	
+	$(function(){
+		$("#dg2").datagrid({
+			onDblClickRow:function(rowIndex,rowData){
+				chooseRole();
+			}
+		});
+	})
+	
+	 function searchUser(){
+		$('#dg').datagrid('load',{
+			s_userName:$("#s_userName").val()
+			
+		});
+	
+	} 
+	
+	function openUserAddDialog(){
+		$("#dlg").dialog("open").dialog("setTitle","添加课程");
+		url="coursesaction_AddCourses.action";
+	}
+	
+	function openUserModifyDialog(){
+		var selectedRows=$("#dg").datagrid('getSelections');
+		if(selectedRows.length!=1){
+			$.messager.alert('系统提示','请选择一条要编辑的数据！');
+			return;
+		}
+
+		var row=selectedRows[0];
+		
+		$("#dlg").dialog("open").dialog("setTitle","修改课程");
+		$("#fm").form("load",row);
+		
+		$('#dg').datagrid('load',{
+			user:$("#user").val()
+			
+		});
+		
+		url="coursesaction_UpdateCourses.action";
+		
+		
+	}
+	
+	function saveUser(){
+		$("#fm").form("submit",{
+			url:url,
+			onSubmit:function(){
+				return $(this).form("validate");			
+			},
+			success:function(result){
+				var result=eval('('+result+')');
+				if(!result.errorMsg){
+					$.messager.alert('系统提示',"<font color=red>"+result.errorMsg+"</font>");
+					return;
+				}else{
+					$.messager.alert('系统提示','保存成功');
+					closeUserAddDialog();
+					$("#dg").datagrid("reload");
+					
+				}
+			}
+		});
+	}
+	
+	function closeUserAddDialog(){
+		$("#dlg").dialog("close");
+		$("#fm").form('clear');
+	}
+	
+	
+	function deleteUser(){
+		var selectedRows=$("#dg").datagrid('getSelections');
+		if(selectedRows.length==0){
+			$.messager.alert('系统提示','请选择要删除的数据！');
+			return;
+		}
+		var strIds=[];
+		for(var i=0;i<selectedRows.length;i++){
+			strIds.push(selectedRows[i].user);
+		}
+		var ids=strIds.join(",");
+		$.messager.confirm("系统提示","您确认要删除这<font color=red>"+selectedRows.length+"</font>条数据吗？",function(r){
+			if(r){
+				$.post("coursesaction_DeleteCourses.action",{delIds:ids},function(result){
+					var data=eval("("+result+")") ;
+					if(data.success){
+						$.messager.alert('系统提示',"您已成功删除<font color=red>"+data.delNums+"</font>条数据！");
+						$("#dg").datagrid("reload");
+					}else{
+						$.messager.alert('系统提示',result.errorMsg);
+					}
+				});
+			}
+		});
+	}
+	
+	
+</script>
+</head>
+<body style="margin: 1px;">
+	
+<!-- 	</table> studentaction_queryall.action  -->
+
+
+<table id="dg" title="课程管理" class="easyui-datagrid" fitColumns="true" 
+    pagination="true" rownumbers="true" url="coursesaction_queryall.action" fit="true" toolbar="#tb">
+    <thead>
+    	<tr>
+    		<th field="cb" checkbox="true" align="center"></th>
+    		<th field="user" width="200" align="center">课程编号</th>
+    	<!-- 	<th field="password" width="200" align="center">密码</th> -->
+    		<th field="name" width="100" align="center">课程名</th>
+    		
+    	</tr>
+    </thead>
+</table>
+
+<div id="tb">
+	<div>
+		<a href="javascript:openUserAddDialog()" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加</a>
+		<a href="javascript:openUserModifyDialog()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
+		<a href="javascript:deleteUser()" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
+	</div>
+	<div id="test">
+		&nbsp;课程名：&nbsp;<input type="text" name="s_userName" id="s_userName" size="20" onkeydown="if(event.keyCode==13) searchUser()"  />
+	  	<a href="javascript:searchUser()" class="easyui-linkbutton" iconCls="icon-search" plain="true">搜索</a>  
+ <!-- <a href="studentaction_queryall.action" class="easyui-linkbutton" iconCls="icon-search" plain="true">搜索</a>   -->
+	</div>
+</div>
+<!--  data-options="url:'studentaction_FindStudent.action'"-->
+<div id="dlg" class="easyui-dialog" style="width: 320px;height: 150px;padding: 10px 20px"
+  closed="true" buttons="#dlg-buttons">
+  <form id="fm" method="post">
+  	<table cellspacing="5px;">
+				<!-- <tr>
+					<td>课程号：</td>
+					<td><input type="text" id="user" name="user"
+						class="easyui-validatebox" required="true" /></td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				</tr> -->
+				
+				<tr>
+					<td>课程名称：</td>
+					<td><input type="text" id="name" name="name"
+						class="easyui-validatebox" required="true" /></td>
+				</tr>
+  	</table>
+  </form>
+</div>
+
+<div id="dlg-buttons">
+	<a href="javascript:saveUser()" class="easyui-linkbutton" iconCls="icon-ok" >保存</a>
+	<a href="javascript:closeUserAddDialog()" class="easyui-linkbutton" iconCls="icon-cancel" >关闭</a>
+</div>
+
+</body>
+</html>

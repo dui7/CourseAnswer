@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx">
+
+	<bean id="studentDao" class="com.hrbhuade.studentManageDao.StudentDao"> 
+ 		<property name="sf" ref="sessionFactory" />
+ 	</bean> 
+	
+	
+ 	<bean id="studentService" class="com.hrbhuade.studentManageService.StudentService"> 
+ 		<property name="student" ref="studentDao" />  
+
+	</bean> 
+	
+	<bean id="studentAction" class="com.hrbhuade.studentManageAction.StudentAction"> 
+		<property name="studentService" ref="studentService" /> 
+	</bean> 
+</beans>

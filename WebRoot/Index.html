@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>首页</title>
+
+		<link rel="stylesheet" href="CSS/bootstrap.min.css">
+		<link rel="stylesheet" href="CSS/IndexStyle.css">
+
+	</head>
+
+	<body>
+		<!-- 第一部分 -->
+		<!--
+<div class="side-nav" role="navgiation">
+  <ul class=" nav-side-nav">
+    <li><a class=" tooltip-side-nav" href="#"></a></li>
+    <li><a class=" tooltip-side-nav" href="#"></a></li>
+    <li><a class=" tooltip-side-nav" href="#"></a></li>
+    <li><a class=" tooltip-side-nav" href="#"></a></li>
+    <li><a class=" tooltip-side-nav" href="#"></a></li>
+  </ul>
+</div>
+  -->
+
+		<nav class="navbar  navbar-fixed-top nav-yinying" role="navigation">
+			<div class=" container">
+
+				<div class=" navbar-header">
+					<a href="#" class=" navbar-brand text-yinying" style="color:#caff00; font-size:25px;">课程答疑系统 </a>
+				</div>
+
+				<ul class="select01 mynav navbar-nav">
+					<li class=""><a href="Index.html">主页</a></li>
+
+					<li><a href="teacherList.html">预约老师</a></li>
+					<li><a href="#">笔记交流</a></li>
+				</ul>
+				<div class="login_button">
+					<div class="user-name"> 
+						
+						<a href="#" class="user-font"style="color:#ffffff ;"><img class="user-img img-rounded" src="image/001.jpg" > Sirius...</a>
+						<a href="#"><img class="img-info" src="easyui/themes/usericons/modifyPassword.png"></a>					
+					</div>
+					
+					<!--<p class="login-btn">
+						<a class="index-btn btn btn-group-xs" data-toggle="modal" data-target="#myModal" href="#">登&nbsp;&nbsp;录</a> </div>
+				</p>-->
+			</div>
+		</nav>
+
+		<div class="onepage" id="onepage">
+			<div class="onepage-bg" id="onepagebg">
+				<div></div>
+				<div class="container">
+					<div class="row">
+						<div class="title-text">
+							<div class="col-lg-offset-2 col-lg-8 " id="top1">
+
+								<h1 class="headh1content text-yinying background"> <strong>欢迎使用哈尔滨华德学院<br>课程答疑系统<br></strong>
+							
+								</h1>
+								<p class="textone text-yinying"><strong>在这里你可以预约到华德学院最专业最具权威的教师<br>
+              来帮您解答各种专业知识的问题。
+              </strong>
+								</p>
+								<p class="btn-hover btn-app-stroe ">
+									<a class="index-btn btn   btn-lg text-yinying" href="teacherList.html" id="go"> &nbsp;&nbsp;&nbsp; 点击我，问老师去喽！&nbsp;&nbsp;&nbsp; </a>
+								</p>
+
+							</div>
+							<!--登录页面 -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content myModal">
+					<div class="modal-header suo">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times; </button>
+						<h4 class="modal-title mytitle" id="myModalLabel"> Login </h4>
+
+					</div>
+					<div class="modal-body ">
+						<div class="result" id="result"></div>
+
+						<form class=" form-horizontal" action="" method="post" name="userMsg" id="userMsg" onSubmit="return check()" style="margin-left:0%; ">
+							<div class="my-group">
+								<input type="text" placeholder="username" class="form-control" name="username" id="username">
+								<br/>
+								<input type="password" placeholder="password" class="form-control" name="password" id="password">
+							</div>
+							<div class="form-group">
+								<div class=" form-group">
+
+								</div>
+							</div>
+							<div class="checkbox">
+								<!--<label  style="margin-left:160px;">
+                        <input type="checkbox"  >
+                        <span color="#333333">记住密码</span> 
+                        </label>
+                        <br>  -->
+								<div class="btn-group" data-toggle="buttons">
+									<label id="radio-btn" class="btn   btn-default active">
+                      <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                      教师 </label>
+									<label id="radio-btn" class="btn btn-default">
+                      <input type="radio" name="options" id="option2" autocomplete="off" >
+                      学生 </label>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<button type="sumbit" class="btn btn-success ">Login</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+		</div>
+
+		<script src="JS/Login.js"></script>
+		<script src="JS/jquery.min.js"></script>
+		<script src="JS/bootstrap.min.js"></script>
+
+		</script>
+	</body>
+
+</html>

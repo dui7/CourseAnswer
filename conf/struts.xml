@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" /><!-- 使struts已开发模式进行运行 -->
+	<package name="ssh" extends="struts-default">
+		<action name="authaction" class="com.hrbhuade.adminUserAction.AuthAction">
+		</action>
+		
+		<action name="studentaction_*" method="{1}" class="com.hrbhuade.studentManageAction.StudentAction"> 
+      		</action> 
+      		
+      	<action name="teacheraction_*" method="{1}" class="com.hrbhuade.teacherManageAction.TeacherAction"> 
+      	</action> 
+      	
+      	<action name="coursesaction_*" method="{1}" class="com.hrbhuade.collegeManageAction.CoursesAction"> 
+      	</action> 
+      	
+      	<action name="departmentaction_*" method="{1}" class="com.hrbhuade.collegeManageAction.DepartmentAction"> 
+      	</action> 
+      	
+       	<action name="teachersofficeaction_*" method="{1}" class="com.hrbhuade.collegeManageAction.TeachersofficeAction"> 
+      	</action> 
+	</package>
+	
+	
+</struts>    
